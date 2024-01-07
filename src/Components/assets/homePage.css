@@ -1,0 +1,96 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    background-image: url("https://www.extensiv.com/hubfs/Skubana/Blog%20Pages/Imported_Blog_Media/Image%201-Oct-12-2022-05-34-21-24-PM.jpeg#keepProtocol");
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+ filter: blur(8px);
+    z-index: -1;
+  } 
+  
+  span {
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .homepage {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .col-md-6 {
+    background: rgba(0, 0, 0, 0.5);
+ 
+    margin: 10px;
+    color: #fff;
+    padding: 20px;
+    text-align: right;
+    position: relative;
+    z-index: 1;
+  } */
+
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .homepage-background::before {
+    content: "";
+    background-image: url("https://www.extensiv.com/hubfs/Skubana/Blog%20Pages/Imported_Blog_Media/Image%201-Oct-12-2022-05-34-21-24-PM.jpeg#keepProtocol");
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* span {
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
+  } */
+  
+  .homepage {
+  
+    width: 100%;
+    height: 100%;
+  }
+  
+  .col-md-6 {
+    background: rgba(0, 0, 0, 0.5);
+    margin-right: 15px;
+    margin-top: 80px;
+    color: #fff;
+    padding: 20px;
+    text-align: right;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
