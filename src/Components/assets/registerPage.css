@@ -6,7 +6,8 @@
     background-color: #f6f5f7;
     font-family: "monserrat", sans-serif;
     min-height: 100vh;
-    margin: 10%;
+    /* margin: 10%; */
+    margin-top: 100px;
 
 }
 
@@ -33,19 +34,30 @@
 
 .sign-up{
     width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    margin: auto;
     opacity: 1;
     /* z-index: 1; */
 }
 
 .sign-in{
-    width: 50%;
+    width: 100%;
     z-index: 2;
+    position: absolute;
+    
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .form{
     background: #fff;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     padding: 0 50px;
@@ -167,7 +179,7 @@ transition: transform 0.6s ease-in-out;
   
   .overlay-right {
     right: 0;
-    transform: translateX(25%);
+    transform: translateX(2%);
   }
 
 
@@ -180,7 +192,11 @@ transition: transform 0.6s ease-in-out;
 
 .social-container{
     margin: 20px 0;
+    align-items: center;
+    justify-content: center;
+  
 }
+
 
 
 
