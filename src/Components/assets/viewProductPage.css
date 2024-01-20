@@ -1,0 +1,62 @@
+.view-cart {
+
+    background-color: antiquewhite;
+    padding: 20px;
+}
+
+
+
+.view-container {
+    background-color: azure;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.view-content {
+    font-family: 'Times New Roman', Times, serif;
+    word-spacing: 2px;
+
+}
+
+.view {
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-indent: 40px;
+    color: steelblue;
+}
+
+.main {
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    color: #e6005c;
+    text-transform: capitalize;
+
+}
+
+
+.btn-addInventory {
+    background-color: #e6005c;
+    color: aliceblue;
+    padding: 15px;
+}
+
+.btn-addInventory:hover {
+    background-color: #ff33ff;
+    box-shadow: 10px 10px black;
+}
+
+.btn-AddNew-Product {
+    background-color: #ff4da6;
+    color: whitesmoke;
+}
+
+.btn-AddNew-Product:hover {
+    background-color: #3399ff;
+    color: wheat;
+    box-shadow: 10px 10px 5px 12px lightblue;
+}

@@ -1,0 +1,97 @@
+
+.purchase-heading{
+    font-size: 45px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:   	 #00b8e6;
+      text-shadow: 2px 2px red;
+}
+
+
+.details-heading{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    color:  #ff0000;
+}
+
+.details{
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    color: black;
+
+}
+
+.purchaseOrderCreatedCol{
+
+    border: 1px solid brown;
+    padding: 50px;
+    border-radius: 15px;
+
+}
+
+.purchaseOrderCreatedToCol{
+
+    border: 1px solid brown;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+
+
+.btn-purchaseOrderCreation{
+    background-color: #1affff;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.btn-purchaseOrderCreation:hover{
+    background-color:  	 
+    #00ccff;
+    box-shadow: 10px 10px 	 #00ff99 ;
+}
+
+
+.purchaseDetailCard{
+    background-color: aqua;
+    border-radius: 20px;
+    padding-left: 20px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+
+}
+
+.purchaseDetailCol{
+    background-color: #ff66ff;
+    border-radius: 20px;
+    padding-left: 20px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.btn-received{
+    background-color: #00e600;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    
+    
+}
+
+.btn-received:hover{
+    color: white;
+    background-color:  	 
+    #00ccff;
+    box-shadow: 10px 10px 	black ;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+
+.btn-createSupplier{
+    background-color:  #4ce600;
+    padding: 2px;
+}
+
+.btn-createSupplier:hover{
+    background-color:  #99ff33;
+    box-shadow: 10px 10px black;
+}
+
+.supplier-heading{
+    color: white;
+    text-shadow: 4px 4px 6px red;
+  
+}
+
+.btn-supplierSearch{
+    background-color: 	#00ff99;
+    color: black;
+    letter-spacing: 1px;
+}
+
+.btn-supplierSearch:hover{
+    background-color:  #009900;
+    color: wheat;
+    box-shadow:10px 10px 5px 12px lightblue;
+
+}
+
+.searchBox{
+    border:1px solid black;
+    box-sizing: border-box;
+    border-radius: 15px ;
+}
+
+
+.createSupplier-container{
+    background-color: aliceblue;
+}
+
+
+.btn-updateSupplier{
+    background-color:  #4ce600;
+    padding: 2px;
+
+}
+
+.btn-updateSupplier:hover{
+    background-color: #99ff33;
+    box-shadow: 10px 10px black;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    
+}
+
+
+.crud-heading{
+    font-size: 40px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:  #ffffff;
+    text-shadow: 2px 2px 6px  #cc0066;
+}
+
+
+
+
+
+
+
+
+
+

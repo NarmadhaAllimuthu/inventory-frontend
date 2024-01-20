@@ -1,0 +1,42 @@
+
+
+.customer-heading{
+    font-size: 40px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #00e600;
+    text-shadow: 2px 2px 6px  black;
+}
+
+
+.form-column{
+    border: 1px solid green;
+    padding-left: 180px;
+    padding-top: 40px;
+    border-radius: 20px;
+}
+
+.btn-createCustomer{
+    background-color: #009900;
+    color: whitesmoke;
+}
+
+.btn-createCustomer:hover{
+    background-color:  #33cc33;
+    box-shadow: 10px 10px black;
+}
+
+.text-primary{
+    color: aqua;
+}
+
+
+
+
+
+
+
+
