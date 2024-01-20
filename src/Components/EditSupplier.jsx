@@ -11,7 +11,7 @@ function EditSupplier() {
 
   const getSupplierData = async () => {
     try {
-      const selectedSupplier = await axios.get(`http://localhost:3005/supplier/view-supplier/${params.id}`,
+      const selectedSupplier = await axios.get(`https://nodejs-inventory-management.onrender.com/supplier/view-supplier/${params.id}`,
         {
 
           headers: {
@@ -87,7 +87,7 @@ function EditSupplier() {
       //on submit it will proceess the data and create a object in api
 
       try {
-        const authorData = await axios.put(`http://localhost:3005/supplier/edit-supplier/${params.id}`, values,
+        const authorData = await axios.put(`https://nodejs-inventory-management.onrender.com/supplier/edit-supplier/${params.id}`, values,
           {
 
             headers: {

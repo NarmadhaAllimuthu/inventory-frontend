@@ -98,7 +98,7 @@ function ReceiptPage() {
 
             try {
                 console.log(values)
-                const receiptedData = await axios.post("http://localhost:3005/purchaseOrder/storeReceiptDatas", values,
+                const receiptedData = await axios.post("https://nodejs-inventory-management.onrender.com/purchaseOrder/storeReceiptDatas", values,
                     {
                         headers: {
                             "Authorization": localStorage.getItem("token")
@@ -125,7 +125,7 @@ function ReceiptPage() {
         // console.log(enteredSupplierName);
         if (enteredSupplierName) {
             try {
-                const getSupplierData = await axios.get(`http://localhost:3005/purchaseOrder/getSupplierData/${enteredSupplierName}`,
+                const getSupplierData = await axios.get(`https://nodejs-inventory-management.onrender.com/purchaseOrder/getSupplierData/${enteredSupplierName}`,
                     {
                         headers: {
                             "Authorization": localStorage.getItem("token")
@@ -163,7 +163,7 @@ function ReceiptPage() {
         // console.log(enteredPurchaseId);
         if (enteredPurchaseId) {
             try {
-                const getPurchaseData = await axios.get(`http://localhost:3005/purchaseOrder/getPurchaseOrderData/forReceipt/${enteredPurchaseId}`,
+                const getPurchaseData = await axios.get(`https://nodejs-inventory-management.onrender.com/purchaseOrder/getPurchaseOrderData/forReceipt/${enteredPurchaseId}`,
                     {
                         headers: {
                             "Authorization": localStorage.getItem("token")

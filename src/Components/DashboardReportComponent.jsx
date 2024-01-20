@@ -32,7 +32,7 @@ function DashboardReportComponent() {
         onSubmit: async () => {
             try {
 
-                const response = await axios.get("http://localhost:3005/salesOrder/getSalesOrderReport", {
+                const response = await axios.get("https://nodejs-inventory-management.onrender.com/salesOrder/getSalesOrderReport", {
                     headers: {
                         Authorization: localStorage.getItem("token")
                     },
@@ -91,7 +91,7 @@ function DashboardReportComponent() {
         onSubmit: async () => {
             try {
 
-                const response = await axios.get("http://localhost:3005/purchaseOrder/getPurchaseOrderReport", {
+                const response = await axios.get("https://nodejs-inventory-management.onrender.com/purchaseOrder/getPurchaseOrderReport", {
                     headers: {
                         Authorization: localStorage.getItem("token")
                     },

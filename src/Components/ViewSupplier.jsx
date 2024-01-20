@@ -9,7 +9,7 @@ function ViewSupplier() {
 
     let getinfo= async () => {
          try {
-             const statee = await axios.get(`http://localhost:3005/supplier/view-supplier/${params.id}`,
+             const statee = await axios.get(`https://nodejs-inventory-management.onrender.com/supplier/view-supplier/${params.id}`,
              {
                 
               headers:{

@@ -10,7 +10,7 @@ function InventoryProduct() {
 
     const getProductDetails = async () => {
         try {
-            const response = await axios.get("http://localhost:3005/inventoryProduct/getAllProducts", {
+            const response = await axios.get("https://nodejs-inventory-management.onrender.com/inventoryProduct/getAllProducts", {
 
                 headers: {
                     Authorization: localStorage.getItem("token")
@@ -30,7 +30,7 @@ function InventoryProduct() {
 
     const handleitemDelete = async (id) => {
         try {
-            const deleteProduct = await axios.delete(`http://localhost:3005/inventoryProduct/deleteProduct/${id}`,
+            const deleteProduct = await axios.delete(`https://nodejs-inventory-management.onrender.com/inventoryProduct/deleteProduct/${id}`,
                 {
 
                     headers: {

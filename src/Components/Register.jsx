@@ -75,7 +75,7 @@ function Register() {
       //on submit it will proceess the data and create a object in api
 
       try {
-        const authorData = await axios.post("http://localhost:3005/user-creation/register", values);
+        const authorData = await axios.post("https://nodejs-inventory-management.onrender.com/user-creation/register", values);
         alert("Registered Data Posted successfully !");
         navigate("/login");
         formik.handleReset();

@@ -11,7 +11,7 @@ function EditInventoryProduct() {
 
   const getProductData = async () => {
     try {
-      const selectedProduct = await axios.get(`http://localhost:3005/inventoryProduct/editProduct/${params.id}`,
+      const selectedProduct = await axios.get(`https://nodejs-inventory-management.onrender.com/inventoryProduct/editProduct/${params.id}`,
         {
 
           headers: {
@@ -82,7 +82,7 @@ function EditInventoryProduct() {
       //on submit it will proceess the data and create a object in api
 
       try {
-        const productCreated = await axios.put(`http://localhost:3005/inventoryProduct/editProduct/${params.id}`, values,
+        const productCreated = await axios.put(`https://nodejs-inventory-management.onrender.com/inventoryProduct/editProduct/${params.id}`, values,
           {
 
             headers: {

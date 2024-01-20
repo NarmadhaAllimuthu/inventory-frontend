@@ -15,7 +15,7 @@ function CardComponent() {
 
   const handleCustomerCount = async () => {
     try {
-      const response = await axios.get("http://localhost:3005/customer/getCustomerCount", {
+      const response = await axios.get("https://nodejs-inventory-management.onrender.com/customer/getCustomerCount", {
         headers: {
           'Authorization': localStorage.getItem('token')
         }
@@ -32,7 +32,7 @@ function CardComponent() {
 
   const handleSupplierCount = async () => {
     try {
-      const response = await axios.get("http://localhost:3005/supplier/getSupplierCount", {
+      const response = await axios.get("https://nodejs-inventory-management.onrender.com/supplier/getSupplierCount", {
         headers: {
           'Authorization': localStorage.getItem('token')
         }
@@ -48,7 +48,7 @@ function CardComponent() {
 
   const handlePurchaseCount = async () => {
     try {
-      const response = await axios.get("http://localhost:3005/purchaseOrder/getPurchaseInvoiceCount", {
+      const response = await axios.get("https://nodejs-inventory-management.onrender.com/purchaseOrder/getPurchaseInvoiceCount", {
         headers: {
           'Authorization': localStorage.getItem('token')
         }
@@ -64,7 +64,7 @@ function CardComponent() {
 
   const handleSalesCount = async () => {
     try {
-      const response = await axios.get("http://localhost:3005/salesOrder/getSalesOrderCount", {
+      const response = await axios.get("https://nodejs-inventory-management.onrender.com/salesOrder/getSalesOrderCount", {
         headers: {
           'Authorization': localStorage.getItem('token')
         }
@@ -81,7 +81,7 @@ function CardComponent() {
 
   const handleTotalSales = async () => {
     try {
-      const response = await axios.get("http://localhost:3005/salesOrder/getTotalSalesAmount", {
+      const response = await axios.get("https://nodejs-inventory-management.onrender.com/salesOrder/getTotalSalesAmount", {
         headers: {
           'Authorization': localStorage.getItem('token')
         }
@@ -99,7 +99,7 @@ function CardComponent() {
 
   const handleTotalPurchaseAmount = async () => {
     try {
-      const response = await axios.get("http://localhost:3005/purchaseOrder/getTotalPurchaseAmount", {
+      const response = await axios.get("https://nodejs-inventory-management.onrender.com/purchaseOrder/getTotalPurchaseAmount", {
         headers: {
           'Authorization': localStorage.getItem('token')
         }
