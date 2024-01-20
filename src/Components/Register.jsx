@@ -34,25 +34,39 @@ function Register() {
 
       if (!values.userFirstName) {
         errors.userFirstName = "Required "
+      } else if (values.userFirstName.length < 3 && values.userFirstName.length >= 15) {
+        errors.userFirstName = "Name must be between 3 to 15 characters"
+      } else if (!/^[a-zA-Z ]*$/.test(values.userFirstName)) {
+        errors.userFirstName = "Special characters are not allowed"
       }
+
 
       if (!values.userLastName) {
         errors.userLastName = "Required *"
+      } else if (!/^[a-zA-Z ]*$/.test(values.userLastName)) {
+        errors.userLastName = "Special characters are not allowed"
       }
+
       if (!values.emailId) {
         errors.emailId = "Required *"
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.emailId)) {
+        errors.emailId = 'Invalid email address';
       }
 
       if (!values.password) {
         errors.password = "Required *"
+      } else if (values.password.length < 6) {
+        errors.password = "Password must be atleast 6 characters"
       }
       if (!values.confirmPassword) {
         errors.confirmPassword = "Required *"
+      } else if (values.confirmPassword.length < 6) {
+        errors.confirmPassword = "Password must be atleast 6 characters"
       }
-
-      if (!values.password || !values.confirmPassword) {
+      else if (values.password !== values.confirmPassword) {
         errors.confirmPassword = "Mismatch Password *"
       }
+
 
       return errors;
     },
@@ -61,7 +75,7 @@ function Register() {
       //on submit it will proceess the data and create a object in api
 
       try {
-        const authorData = await axios.post("http://localhost:4000/register", values);
+        const authorData = await axios.post("http://localhost:3005/user-creation/register", values);
         alert("Registered Data Posted successfully !");
         navigate("/login");
         formik.handleReset();
@@ -77,180 +91,124 @@ function Register() {
 
     }
   })
-  const triggerSignIn = () => {
-    const main = document.getElementById("main");
-    main.classList.add("right-panel-active");
-    console.log("Sign In clicked");
-  }
-  const triggerSignUp = () => {
-    const main = document.getElementById("main");
-    main.classList.remove("right-panel-active");
-    console.log("Sign Up clicked");
-  }
+
 
   return (
 
-    <div className='container register-container register-page' id="main">
-      <div className="row autho-container">
-        <div className="sign-up col-6 mb-3">
+    <div className="container register-container register-page" >
 
-          <form className='form' >
+      <div className="card o-hidden border-0 shadow-lg my-5 ">
+        <div className="card-body p-2">
 
-            <h1 className='heading mb-4'>Create Account</h1>
-            <div className="social-container mb-4">
-              <FaGoogle className="mx-2" />
-              <FaFacebook className="mx-2" />
-              <FaLinkedin className="mx-2" />
-            </div>
-            <p className="mb-4">or use your email for registration</p>
-            <div className="row">
+          <div className="row">
 
-              <div className="col-6 mb-3">
-
-                <input
-                  type="text"
-                  className="form-control"
-                  id="exampleFirstName"
-                  placeholder="First Name"
-                  name="userFirstName"
-                  onClick={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
-                {(formik.getFieldMeta("userFirstName").touched && formik.errors.userFirstName)
-                  ? <span style={{ color: "red" }}>{formik.errors.userFirstName}</span> : null}
-              </div>
-              <div className="col-6 mb-3">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="exampleLastName"
-                  placeholder="Last Name"
-                  name="userLastName"
-                  onClick={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
-                {(formik.getFieldMeta("userLastName").touched && formik.errors.userLastName)
-                  ? <span style={{ color: "red" }}>{formik.errors.userLastName}</span> : null}
-              </div>
-            </div>
-            <div className="mb-3">
-              <input
-                type="email"
-                className="form-control"
-                id="exampleInputEmail"
-                placeholder="Email Address"
-                name="emailId"
-                onClick={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
-              {(formik.getFieldMeta("emailId").touched && formik.errors.emailId)
-                ? <span style={{ color: "red" }}>{formik.errors.emailId}</span> : null}
-            </div>
-            <div className="row">
-              <div className="col-6 mb-3">
-                <input
-                  type="password"
-                  className="form-control"
-                  id="exampleInputPassword"
-                  placeholder="Password"
-                  name="password"
-                  onClick={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
-                {(formik.getFieldMeta("password").touched && formik.errors.password)
-                  ? <span style={{ color: "red" }}>{formik.errors.password}</span> : null}
-              </div>
-              <div className="col-6 mb-3">
-                <input
-                  type="password"
-                  className="form-control"
-                  id="exampleRepeatPassword"
-                  placeholder="Confirm Password"
-                  name="confirmPassword"
-                  onClick={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
-                {(formik.getFieldMeta("confirmPassword").touched && formik.errors.confirmPassword)
-                  ? <span style={{ color: "red" }}>{formik.errors.confirmPassword}</span> : null}
-              </div>
-            </div>
-            <button
-              type="submit"
-              className="btn btn-info btn-block"
-              onClick={formik.handleSubmit}
-            >
-              Sign Up
-            </button>
-          </form>
-        </div>
-
-        <div className="sign-in col-6 mb-3">
-          <form className='form'>
-            <h1 className='heading mb-4'>Welcome Back!</h1>
-            <div className="social-container mb-4">
-              <FaGoogle className="mx-2 " />
-              <FaFacebook className="mx-2" />
-              <FaLinkedin className="mx-2" />
-            </div>
-            <p className="mb-4">or use your account</p>
-            <div className="mb-3">
-              <input
-                type="email"
-                className="form-control"
-                id="exampleInputEmail"
-                placeholder="Email Address"
-                name="emailId"
-                onClick={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
-              {(formik.getFieldMeta("emailId").touched && formik.errors.emailId)
-                ? <span style={{ color: "red" }}>{formik.errors.emailId}</span> : null}
-            </div>
-            <div className="mb-3">
-              <input
-                type="password"
-                className="form-control"
-                id="exampleInputPassword"
-                placeholder="Password"
-                name="password"
-                onClick={formik.handleChange}
-                onBlur={formik.handleBlur}
-
-              />
-              {(formik.getFieldMeta("password").touched && formik.errors.password)
-                ? <span style={{ color: "red" }}>{formik.errors.password}</span> : null}
-            </div>
-            <Link className='forget-password mb-3'>Forget Password</Link>
-            <button
-              type="submit"
-              className="btn btn-primary btn-block"
-              onClick={formik.handleSubmit}
-            >
-              Sign In
-            </button>
-            <div className="overlay-container">
-              <div className="overlay">
-                <div className="overlay-panel overlay-left">
-                  <h1 className='heading mb-4'>Welcome Back!</h1>
-                  <p>To keep connected with us, please login with your personal info</p>
-                  <button className="btn btn-outline-info" id="signIn" onClick={triggerSignIn}>
-                    Sign In
-                  </button>
+            <div className="col-lg">
+              <div className="p-5">
+                <div className="text-center">
+                  <h2 className='h1'><i class="bi bi-bank2"> FOAP </i></h2>
+                  <h4 className='h5'>Inventory Management System</h4>
+                  <h1 className="h3 text-white-900 mb-4">Create an Account !</h1>
                 </div>
-                <div className="overlay-panel overlay-right">
-                  <h1 className='heading mb-4'>Hello, Friend!</h1>
-                  <p>Enter your personal details and start your journey with us</p>
-                  <button className="btn btn-outline-info" id="signUp" onClick={triggerSignUp}>
-                    Sign Up
-                  </button>
+                <form className="user" onSubmit={formik.handleSubmit}>
+                  <div className="form-group row">
+                    <div className="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text"
+                        className="form-control form-control-user"
+                        id="exampleFirstName"
+                        placeholder="First Name"
+                        name="userFirstName"
+                        onClick={formik.handleChange}
+                        onBlur={formik.handleBlur} />
+
+                      {(formik.getFieldMeta("userFirstName").touched && formik.errors.userFirstName)
+                        ? <span style={{ color: "red" }}>{formik.errors.userFirstName}</span> : null}
+
+
+                    </div>
+                    <div className="col-sm-6">
+                      <input type="text"
+                        className="form-control form-control-user"
+                        id="exampleLastName"
+                        placeholder="Last Name"
+                        name="userLastName"
+                        onClick={formik.handleChange}
+                        onBlur={formik.handleBlur} />
+
+                      {(formik.getFieldMeta("userLastName").touched && formik.errors.userLastName)
+                        ? <span style={{ color: "red" }}>{formik.errors.userLastName}</span> : null}
+
+                    </div>
+
+
+                  </div>
+                  <div className="form-group">
+                    <input type="email"
+                      className="form-control form-control-user"
+                      id="exampleInputEmail"
+                      placeholder="Email Address"
+                      name="emailId"
+                      onClick={formik.handleChange}
+                      onBlur={formik.handleBlur} />
+
+                    {(formik.getFieldMeta("emailId").touched && formik.errors.emailId)
+                      ? <span style={{ color: "red" }}>{formik.errors.emailId}</span> : null}
+
+                  </div>
+                  <div className="form-group row">
+                    <div className="col-sm-6 mb-3 mb-sm-0">
+                      <input type="password"
+                        className="form-control form-control-user"
+                        id="exampleInputPassword"
+                        placeholder="Password"
+                        name="password"
+                        onClick={formik.handleChange}
+                        onBlur={formik.handleBlur} />
+
+                      {(formik.getFieldMeta("password").touched && formik.errors.password)
+                        ? <span style={{ color: "red" }}>{formik.errors.password}</span> : null}
+
+
+                    </div>
+                    <div className="col-sm-6">
+                      <input type="password"
+                        className="form-control form-control-user"
+                        id="exampleRepeatPassword"
+                        placeholder="Confirm Password"
+                        name="confirmPassword"
+                        onClick={formik.handleChange}
+                        onBlur={formik.handleBlur} />
+
+                      {(formik.getFieldMeta("confirmPassword").touched && formik.errors.confirmPassword)
+                        ? <span style={{ color: "red" }}>{formik.errors.confirmPassword}</span> : null}
+
+                    </div>
+                  </div>
+                  <hr />
+                  <div className="text-center">
+                    <button type="submit" className="btn btn-danger btn-user btn-block">
+                      Register Account
+                    </button>
+                  </div>
+
+                  {/* <a href="index.html" className="btn btn-google btn-danger btn-user btn-block">
+                    <i className="fab fa-google fa-fw"></i> Register with Google
+                  </a> */}
+                  {/* <a href="index.html" className="btn btn-facebook btn-warning btn-user btn-block">
+                                <i className="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                            </a> */}
+                </form>
+                <hr />
+
+                <div className="text-center">
+                  <Link className="small" to={"/login"}>Already have an account? Login!</Link>
                 </div>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
 
 
 

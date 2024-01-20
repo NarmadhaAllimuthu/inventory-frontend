@@ -1,0 +1,35 @@
+
+
+.btn-logOut{
+    background-color:  #ff0000;
+    color: white;
+}
+
+
+.btn-logOut:hover{
+    background-color: #e60000;
+}
+
+
+.btn-additional-Info{
+    background-color: aqua;
+}
+
+.btn-additional-Info:hover{
+    background-color: blue;
+}
+
+.profile-container{
+    background-color: aliceblue;
+    width: 200%;
+    height: 200%;
+}
+
+
+
+
+
+
+
+
+

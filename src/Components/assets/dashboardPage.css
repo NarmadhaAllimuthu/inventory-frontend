@@ -1,0 +1,144 @@
+.dashboard-container {
+    margin-top: 40px;
+    width: 1300px;
+}
+
+.customer-card {
+    background-color:#ff8000;
+    border: none !important;
+    border-radius: 20px;
+
+
+}
+
+.customer-card:hover{
+    background-color: 	#ff6600 ;
+    box-shadow: 10px 10px black;
+}
+
+
+.purchase-invoiceCard {
+    background-color: #cc0000;
+    border: none !important;
+    border-radius: 20px;
+}
+
+.purchase-invoiceCard:hover{
+background-color: #ff0000;
+    box-shadow: 10px 10px black;
+}
+
+.text-xs{
+    color: white;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.salesOrderCard {
+    background-color: #00cc00;
+
+    border: none !important;
+    border-radius: 20px;
+
+}
+
+.salesOrderCard:hover{
+    background-color: 
+    #00ff00;
+    box-shadow: 10px 10px black;
+}
+
+.supplier-card {
+    background-color: #800080;
+
+    border: none !important;
+    border-radius: 20px;
+
+}
+
+.supplier-card:hover{
+background-color: #c61aff ;
+    box-shadow: 10px 10px black;
+}
+
+.text-count{
+    color: aliceblue;
+}
+
+
+.totalSales-card{
+    background-color: #e6004c;
+    border-radius: 40px;
+}
+
+.totalSales-card:hover{
+background-color: #ff1a8c;
+    box-shadow: 10px 10px 10px   #ff1a8c;
+}
+.totalPurchase-card{
+    background-color: #3377ff;
+    border-radius: 40px;
+}
+
+.totalPurchase-card:hover{
+background-color:  #00ccff;
+    box-shadow: 10px 10px 10px   #00ffff;
+}
+
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    margin-top: 10px;
+}
+
+.topic{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.para{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-indent: 100px;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    line-height: 1.6;
+}
+
+.salesReport{
+    border: solid black 1px;
+}
+
+
+.purchaseOrderReport{
+    border: solid black 1px;
+}
+
+
+.label{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.btn{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    padding: 5px;
+}
+
+
+.table-content{
+    background-color: #ff1a1a;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+
+.custom-select{
+    width: 200px;
+}
+
+
+.btn-salesOrder{
+    background-color: #009900;
+    color: whitesmoke;
+}
+
+.btn-salesOrder:hover{
+    background-color:  #33cc33;
+    box-shadow: 10px 10px black;
+}
+
+.salesBill{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+
+

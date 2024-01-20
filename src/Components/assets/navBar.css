@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+}
+
+
+.navbar-with-background {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 100px;
+    background-color: #003366;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+
+.navbar-brand{
+    color: whitesmoke;
+}
+
+
+.user-detail  {
+    color: #fff;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    display: ${isDropdownOpen ? 'block' : 'none'};
+    visibility: ${isDropdownOpen ? 'visible' : 'hidden'};
+    z-index: 1000;
+
+  }
+  
+
+
+
+
+
