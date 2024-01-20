@@ -29,7 +29,7 @@ function ResetPasswordPage() {
         },
         onSubmit: async (values) => {
             try {
-                const userData = await axios.put(`http://localhost:3005/user-creation/forgetPassword/resetPassword/${params.id}`, values);
+                const userData = await axios.put(`https://nodejs-inventory-management.onrender.com/user-creation/forgetPassword/resetPassword/${params.id}`, values);
 
                 alert("Password Reset Successfully !");
                 navigate(`/login`);

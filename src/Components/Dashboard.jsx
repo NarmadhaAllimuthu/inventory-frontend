@@ -16,7 +16,7 @@ function Dashboard() {
 
   const getLessStockProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:3005/inventoryProduct/getLessStockAlert', {
+      const response = await axios.get('https://nodejs-inventory-management.onrender.com/inventoryProduct/getLessStockAlert', {
         headers: {
 
           Authorization: localStorage.getItem('token')

@@ -52,7 +52,7 @@ function CustomerCreatingPage() {
             //on submit it will proceess the data and create a object in api
 
             try {
-                const customerCreatedData = await axios.post("http://localhost:3005/customer/createCustomer", values, {
+                const customerCreatedData = await axios.post("https://nodejs-inventory-management.onrender.com/customer/createCustomer", values, {
                     headers: {
                         "Authorization": localStorage.getItem("token")
                     }

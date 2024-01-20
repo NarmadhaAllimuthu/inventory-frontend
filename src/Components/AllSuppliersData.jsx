@@ -9,7 +9,7 @@ function AllSuppliersData() {
 
     const getSuppliersData = async () => {
         try {
-            const response = await axios.get('http://localhost:3005/supplier/getAllSuppliersData', {
+            const response = await axios.get('https://nodejs-inventory-management.onrender.com/supplier/getAllSuppliersData', {
 
                 headers: {
                     Authorization: localStorage.getItem("token")

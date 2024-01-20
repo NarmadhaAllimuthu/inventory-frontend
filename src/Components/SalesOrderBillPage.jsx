@@ -13,7 +13,7 @@ function SalesOrderBillPage() {
 
     const getPurchaseOrder = async () => {
         try {
-            const response = await axios.get(`http://localhost:3005/salesOrder/getSalesOrderDatas/${params.id}`,
+            const response = await axios.get(`https://nodejs-inventory-management.onrender.com/salesOrder/getSalesOrderDatas/${params.id}`,
                 {
                     headers: {
                         "Authorization": localStorage.getItem("token")

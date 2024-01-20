@@ -35,7 +35,7 @@ function ForgetPassword() {
             //on submit it will proceess the data and create a object in api
 
             try {
-                const userData = await axios.get(`http://localhost:3005/user-creation/forgetPassword/checkEmail/${selectedEmail}`);
+                const userData = await axios.get(`https://nodejs-inventory-management.onrender.com/user-creation/forgetPassword/checkEmail/${selectedEmail}`);
                 navigate(`/resetPassword/${userData.data._id}`);
                 formik.handleReset();
                 // console.log(userData.data);

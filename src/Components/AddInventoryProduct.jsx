@@ -61,7 +61,7 @@ function AddInventoryProduct() {
       //on submit it will proceess the data and create a object in api
 
       try {
-        const productCreated = await axios.post("http://localhost:3005/inventoryProduct/createProduct", values,
+        const productCreated = await axios.post("https://nodejs-inventory-management.onrender.com/inventoryProduct/createProduct", values,
           {
 
             headers: {

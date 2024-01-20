@@ -18,7 +18,7 @@ function AddProfileInfo() {
   const getProfile = async () => {
     try {
       const userDataResponse = await axios.get(
-        `http://localhost:3005/user-creation/userData/${params.id}`,
+        `https://nodejs-inventory-management.onrender.com/user-creation/userData/${params.id}`,
         {
           headers: {
             "Authorization": localStorage.getItem("token")
@@ -59,7 +59,7 @@ function AddProfileInfo() {
 
       if (edit) {
         try {
-          await axios.put(`http://localhost:3005/user-creation/updateUser/${params.id}`, formik.values, {
+          await axios.put(`https://nodejs-inventory-management.onrender.com/user-creation/updateUser/${params.id}`, formik.values, {
             headers: {
               "Authorization": localStorage.getItem("token")
             }

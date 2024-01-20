@@ -27,7 +27,7 @@ function SalesOrder() {
   const getProfile = async () => {
     try {
       const userDataResponse = await axios.get(
-        `http://localhost:3005/user-creation/userData`,
+        `https://nodejs-inventory-management.onrender.com/user-creation/userData`,
         {
           headers: {
             "Authorization": localStorage.getItem("token")
@@ -48,7 +48,7 @@ function SalesOrder() {
 
   const getProductDetails = async () => {
     try {
-      const response = await axios.get("http://localhost:3005/inventoryProduct/getAllProducts", {
+      const response = await axios.get("https://nodejs-inventory-management.onrender.com/inventoryProduct/getAllProducts", {
         headers: {
           "Authorization": localStorage.getItem("token")
         }
@@ -77,7 +77,7 @@ function SalesOrder() {
   const getselectedProductData = async () => {
     try {
       if (selectedProduct && selectedProduct.value) {
-        const selectedProductDataResponse = await axios.get(`http://localhost:3005/inventoryProduct/getProduct/${selectedProduct.value}`,{
+        const selectedProductDataResponse = await axios.get(`https://nodejs-inventory-management.onrender.com/inventoryProduct/getProduct/${selectedProduct.value}`,{
           headers: {
             "Authorization": localStorage.getItem("token")
           }
@@ -162,7 +162,7 @@ function SalesOrder() {
             customerDetails: selectedCustomer,
           }
 
-          const response = await axios.post("http://localhost:3005/salesOrder/createSalesOrder", salesOrderPayLoad, {
+          const response = await axios.post("https://nodejs-inventory-management.onrender.com/salesOrder/createSalesOrder", salesOrderPayLoad, {
             headers: {
               Authorization: localStorage.getItem("token")
             }
@@ -216,7 +216,7 @@ function SalesOrder() {
     }, onSubmit: async (values) => {
       // console.log(values);
       try {
-        const supplierData = await axios.get(`http://localhost:3005/customer/getCustomerInfo/${values.customerContact}`,
+        const supplierData = await axios.get(`https://nodejs-inventory-management.onrender.com/customer/getCustomerInfo/${values.customerContact}`,
           {
             headers: {
               Authorization: localStorage.getItem("token")

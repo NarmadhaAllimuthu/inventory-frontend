@@ -66,7 +66,7 @@ function SuplierDetail() {
       //on submit it will proceess the data and create a object in api
 
       try {
-        const supplierCreatedData = await axios.post("http://localhost:3005/supplier/create-supplier", values,
+        const supplierCreatedData = await axios.post("https://nodejs-inventory-management.onrender.com/supplier/create-supplier", values,
         {
                 
           headers:{

@@ -33,7 +33,7 @@ function PurchaseOrderPage() {
         }, onSubmit: async (values) => {
             // console.log(values);
             try {
-                const supplierData = await axios.get(`http://localhost:3005/supplier/get-supplier/${values.supplierName}`,{
+                const supplierData = await axios.get(`https://nodejs-inventory-management.onrender.com/supplier/get-supplier/${values.supplierName}`,{
                     headers:{
                         "Authorization": localStorage.getItem("token")
                     }
@@ -60,7 +60,7 @@ function PurchaseOrderPage() {
     const getProfile = async () => {
         try {
             const userDataResponse = await axios.get(
-                `http://localhost:3005/user-creation/userData`,
+                `https://nodejs-inventory-management.onrender.com/user-creation/userData`,
                 {
                     headers: {
                         "Authorization": localStorage.getItem("token")
@@ -81,7 +81,7 @@ function PurchaseOrderPage() {
 
     const getProductDetails = async () => {
         try {
-            const response = await axios.get("http://localhost:3005/inventoryProduct/getAllProducts", {
+            const response = await axios.get("https://nodejs-inventory-management.onrender.com/inventoryProduct/getAllProducts", {
                 headers: {
                     "Authorization": localStorage.getItem("token")
                 }
@@ -101,7 +101,7 @@ function PurchaseOrderPage() {
 
     const getselectedProductData = async () => {
         try {
-            const selectedProductDataResponse = await axios.get(`http://localhost:3005/inventoryProduct/getProduct/${selectedProduct.productName}`,{
+            const selectedProductDataResponse = await axios.get(`https://nodejs-inventory-management.onrender.com/inventoryProduct/getProduct/${selectedProduct.productName}`,{
                 headers:{
                     "Authorization": localStorage.getItem("token")
                 }
@@ -274,7 +274,7 @@ function PurchaseOrderPage() {
                 };
 
                 // Send the payload to the API
-                const response = await axios.post('http://localhost:3005/purchaseOrder/createPurchaseOrder'
+                const response = await axios.post('https://nodejs-inventory-management.onrender.com/purchaseOrder/createPurchaseOrder'
                     , purchaseOrderPayload,
                     {
                         headers: {

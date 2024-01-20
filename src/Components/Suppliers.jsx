@@ -27,7 +27,7 @@ function Suppliers() {
         }, onSubmit: async (values) => {
             // console.log(values);
             try {
-                const supplierData = await axios.get(`http://localhost:3005/supplier/get-supplier/${values.supplierName}`,
+                const supplierData = await axios.get(`https://nodejs-inventory-management.onrender.com/supplier/get-supplier/${values.supplierName}`,
                 {
                 
                     headers:{
@@ -48,7 +48,7 @@ function Suppliers() {
 
     const handleSupplierDelete = async (id) => {
         try {
-            const deletee = await axios.delete(` http://localhost:3005/supplier/delete-supplier/${id}`,
+            const deletee = await axios.delete(` https://nodejs-inventory-management.onrender.com/supplier/delete-supplier/${id}`,
             {
                 
                 headers:{
