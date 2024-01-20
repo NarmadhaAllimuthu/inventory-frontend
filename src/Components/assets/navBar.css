@@ -40,8 +40,8 @@ body {
     position: absolute;
     top: 100%; 
     left: 0;
-    display: ${isDropdownOpen ? 'block' : 'none'};
-    visibility: ${isDropdownOpen ? 'visible' : 'hidden'};
+    display: "${isDropdownOpen ? 'block' : 'none'}";
+    visibility:" ${isDropdownOpen ? 'visible' : 'hidden'}";
     z-index: 1000;
 
   }
