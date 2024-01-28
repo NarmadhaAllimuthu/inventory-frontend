@@ -77,6 +77,7 @@ function Register() {
       try {
         const authorData = await axios.post("https://nodejs-inventory-management.onrender.com/user-creation/register", values);
         alert("Registered Data Posted successfully !");
+        
         navigate("/login");
         formik.handleReset();
         console.log(authorData.data);
