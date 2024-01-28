@@ -40,7 +40,7 @@ function Login() {
             //on submit it will proceess the data and create a object in api
 
             try {
-                const userData = await axios.post("https://nodejs-inventory-management.onrender.com/user-creation/login", values);
+                const userData = await axios.post("https://nodejs-inventory-management.onrender.com/user-creation/login" , values);
                 localStorage.setItem("token", userData.data.token);
                 localStorage.setItem("user", JSON.stringify(userData.data.user));
                 alert("Logined successfully !");
