@@ -1,8 +1,21 @@
 import React from 'react';
 import "./assets/homePage.css";
 import { Link } from 'react-router-dom';
+// import { signInWithGoogle } from '../../firebase';
 
 function HomePage() {
+
+    // const triggerGoogle =async()=>{
+    //     try{
+    //         const {user} = await signInWithGoogle();
+    //         console.log(user.token);
+
+    //     }catch(error){
+    //         console.log(error);
+    //     }
+
+    // }
+
     return (
         <>
             <div className="container-fluid homepage homepage-background">
@@ -24,7 +37,7 @@ function HomePage() {
                         <p>This is a website where you can manage your inventory. You can add, edit, delete and view your inventory.</p>
 
                         <p>You can also add, edit, delete and view your inventory.</p>
-
+                       
                         <Link to={"register"}> <button className="btn btn-primary  me-2" type="submit">Get Started</button></Link>
 
                     </div>
@@ -38,3 +51,16 @@ function HomePage() {
 }
 
 export default HomePage
+
+
+
+
+
+
+
+
+
+
+
+
+

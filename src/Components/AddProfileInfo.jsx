@@ -4,11 +4,15 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
+// import {} from 'react-router-dom';
+
 
 function AddProfileInfo() {
 
   const params = useParams();
   const navigate = useNavigate();
+  // const history = useHistory();
+
 
   const [userData, setUserData] = useState(null);
   console.log(userData);
@@ -85,9 +89,15 @@ function AddProfileInfo() {
 
   return (
     <div className='container profile-container mt-4'>
+     
       <div className="row mt-4 mb-5">
+      <div>
+        <button onClick={()=>{navigate("/portal/dashboard")}} className='btn btn-lg'>
+        <i class="bi bi-arrow-left-circle"></i>
+          </button>
+        </div>
         <div className="col-lg">
-          <h1 className='text-center heading'>your Account Details </h1>
+          <h1 className='text-center heading'>Your account details </h1>
         </div>
       </div>
       <div className="row mb-5 mx-5 text-center justify-content-center">
@@ -110,7 +120,9 @@ function AddProfileInfo() {
                   <span className='details'> {userData.bio}</span>
                 </h5>
 
-
+                <h5 className='details-heading'>Role :
+                  <span className='details'> {(userData.role).toUpperCase()}</span>
+                </h5>
                 <button className='btn btn-primary' onClick={handleEditProfile}>Update Profile</button>'
               </div>
             </div>

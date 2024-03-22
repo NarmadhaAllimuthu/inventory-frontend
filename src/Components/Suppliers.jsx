@@ -55,7 +55,8 @@ function Suppliers() {
                  Authorization: localStorage.getItem("token")
                 }});
             setState(deletee.data)
-            alert("Supplier deleted successfully  ❗❗❗!")
+            alert(`Supplier deleted successfully  ❗❗❗!
+            `)
 
             console.log("User deleted successfully");
             // You can navigate to another page or perform other actions after successful deletion.
