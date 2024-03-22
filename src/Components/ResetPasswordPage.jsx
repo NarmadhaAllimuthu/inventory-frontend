@@ -57,7 +57,7 @@ function ResetPasswordPage() {
                                         <input
                                             type="password"
                                             class="form-control form-control-user"
-                                            placeholder="Password"
+                                            placeholder="new Password"
                                             name="password"
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}

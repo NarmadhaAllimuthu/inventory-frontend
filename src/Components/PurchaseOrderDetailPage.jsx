@@ -11,6 +11,7 @@ function PurchaseOrderDetailPage() {
 
   const getPurchaseOrder = async () => {
     try {
+      
       const response = await axios.get(`https://nodejs-inventory-management.onrender.com/purchaseOrder/getPurchaseOrder/${params.id}`,
         {
           headers: {

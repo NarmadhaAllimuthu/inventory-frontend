@@ -34,7 +34,7 @@ function Register() {
 
       if (!values.userFirstName) {
         errors.userFirstName = "Required "
-      } else if (values.userFirstName.length < 3 && values.userFirstName.length >= 15) {
+      } else if (values.userFirstName.length < 3 || values.userFirstName.length >= 15) {
         errors.userFirstName = "Name must be between 3 to 15 characters"
       } else if (!/^[a-zA-Z ]*$/.test(values.userFirstName)) {
         errors.userFirstName = "Special characters are not allowed"
@@ -77,13 +77,15 @@ function Register() {
 
       try {
         const authorData = await axios.post("https://nodejs-inventory-management.onrender.com/user-creation/register", values);
+        console.log(authorData.data);
         alert("Registered Data Posted successfully !");
 
         navigate("/login");
         formik.handleReset();
-        console.log(authorData.data);
+       
       } catch (error) {
-        console.log("error", error.response);
+        console.log("error :", error.response);
+
         if (error.response.status === 401) {
           alert("User already exists. Change data to register.");
         } else {

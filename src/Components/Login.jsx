@@ -3,10 +3,21 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import "./assets/loginPage.css"
+import Swal from 'sweetalert2';
 
 function Login() {
 
     const navigate = useNavigate();
+    const handleAlert =()=>{
+        Swal.fire({
+            icon: 'success',
+            title: 'Welcome Back',
+            text: 'Login Successfully',
+            showConfirmButton: false,
+            timer: 9000
+          })
+    }
+    
 
     const formik = useFormik({
         initialValues: {
@@ -43,8 +54,15 @@ function Login() {
                 const userData = await axios.post("https://nodejs-inventory-management.onrender.com/user-creation/login" , values);
                 localStorage.setItem("token", userData.data.token);
                 localStorage.setItem("user", JSON.stringify(userData.data.user));
-                alert("Logined successfully !");
-                navigate("/portal/dashboard");
+                localStorage.setItem("role", JSON.stringify(userData.data.user.role));
+                // alert("Logined successfully !");
+                handleAlert();
+                if(userData.data.user.role==="admin"){
+                    navigate("/portal/dashboard");
+                }else{
+                    navigate("/portal/createCustomer");
+                }
+                // navigate("/portal/dashboard");
                 formik.handleReset();
                 // console.log(userData.data);
             } catch (error) {
@@ -52,7 +70,7 @@ function Login() {
                 if (error.response.status === 401) {
                     // alert("User already exists. Change data to register.");
                 } else {
-                    alert("Something went wrong");
+                    alert(`Something went wrong`);
                 }
             }
 
