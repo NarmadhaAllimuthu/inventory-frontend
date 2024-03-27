@@ -94,6 +94,7 @@ function Login() {
                                             <h2 className="h1"> Login !</h2>
                                        
                                             <h1 class="h4 text-gray-900 mb-4">Welcome Back !</h1>
+                                            <h6 className='text-muted'>Demo Credentials for admin : mailId- admin@gmail.com ,password :123456</h6>
                                         </div>
                                         <form class="user" onSubmit={formik.handleSubmit}>
                                             <div class="form-group">
