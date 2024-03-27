@@ -38,7 +38,7 @@ function ForgetPassword() {
         },
         onSubmit: async (values) => {
             try {
-                const userData = await axios.get(`http://localhost:3005/user-creation/forgetPassword/checkEmail/${selectedEmail}`, values);
+                const userData = await axios.get(`https://nodejs-inventory-management.onrender.com/user-creation/forgetPassword/checkEmail/${selectedEmail}`, values);
                 if (userData.status === 200) {
                     // setAlertMessage("Email sent successfully by check mail. You can reset your password.");
                     handleAlert();
