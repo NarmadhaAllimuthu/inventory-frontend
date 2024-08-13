@@ -113,7 +113,7 @@ function Register() {
                   <h4 className='h5'>Inventory Management System</h4>
                   <h1 className="h3 text-white-900 mb-4">Create an Account !</h1>
                 </div>
-                <form className="user" onSubmit={formik.handleSubmit}>
+                <form className="user" onSubmit={formik.handleSubmit} onReset={formik.handleReset}>
                   <div className="form-group row">
                     <div className="col-sm-6 mb-3 mb-sm-0">
                       <input type="text"
@@ -122,21 +122,28 @@ function Register() {
                         placeholder="First Name"
                         name="userFirstName"
                         onClick={formik.handleChange}
-                        onBlur={formik.handleBlur} />
+                        onBlur={formik.handleBlur} 
+                        // value={formik.values.userFirstName}
+                        />
 
-                      {(formik.getFieldMeta("userFirstName").touched && formik.errors.userFirstName)
+                      {(formik.touched.userFirstName && formik.errors.userFirstName)
+                      
                         ? <span style={{ color: "red" }}>{formik.errors.userFirstName}</span> : null}
 
 
                     </div>
                     <div className="col-sm-6">
-                      <input type="text"
+                      <input
+                       type="text"
                         className="form-control form-control-user"
                         id="exampleLastName"
-                        placeholder="Last Name"
+                    
                         name="userLastName"
                         onClick={formik.handleChange}
-                        onBlur={formik.handleBlur} />
+                        onBlur={formik.handleBlur}    
+                        placeholder="Last Name" >
+
+                        </input>
 
                       {(formik.getFieldMeta("userLastName").touched && formik.errors.userLastName)
                         ? <span style={{ color: "red" }}>{formik.errors.userLastName}</span> : null}

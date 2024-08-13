@@ -25,6 +25,7 @@ import SalesOrder from './Components/SalesOrder';
 import SalesOrderBillPage from './Components/SalesOrderBillPage';
 import ForgetPassword from './Components/ForgetPassword';
 import ResetPasswordPage from './Components/ResetPasswordPage';
+import GroupUsers from './Components/GroupUsers';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/resetPassword/:id" element={<ResetPasswordPage />} />
         <Route path='/addProfileInfo/:id' element={<AddProfileInfo />} />
+        <Route path="group" element={<GroupUsers/>}/>
         <Route path="/portal" element={<Portal />} >
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="suppliers" element={<Suppliers />} />
@@ -45,7 +47,10 @@ function App() {
           <Route path="receipt" element={<ReceiptPage />} />
           <Route path="createCustomer" element={<CustomerCreatingPage />} />
           <Route path="salesOrder" element={<SalesOrder />} />
-          <Route path="salesOrderBillingPage/:id" element={<SalesOrderBillPage />} />
+          <Route path="salesOrderBillingPage/:id" element={<SalesOrderBillPage />
+        } />
+
+
           <Route path="addInventoryProduct" element={<AddInventoryProduct />} />
           <Route path='viewProduct/:id' element={<ViewProduct />} />
           <Route path="editProduct/:id" element={<EditInventoryProduct />} />
@@ -54,6 +59,7 @@ function App() {
           <Route path="view-supplier/:id" element={<ViewSupplier />} />
 
           <Route path="edit-supplier/:id" element={<EditSupplier />} />
+         
         </Route>
 
 

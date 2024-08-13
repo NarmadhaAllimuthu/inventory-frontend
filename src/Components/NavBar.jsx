@@ -34,6 +34,12 @@ function NavBar() {
         </Link>
 
         {userData && (
+          <>
+          {/* <div>
+            <Link to="/group" className="btn btn-primary">
+              group users
+            </Link>
+          </div> */}
           <div className="h4 ml-auto btn-group" style={{ position: 'relative' }}>
             <span onClick={toggleDropdown} className='user-detail dropdown-toggle'>
               {userData.userFirstName + userData.userLastName}
@@ -59,6 +65,7 @@ function NavBar() {
               </ul>
             )}
           </div>
+          </>
         )}
       </div>
     </nav>

@@ -24,8 +24,8 @@ function Login() {
             // here we get the form values by same name and intially empty
 
             emailId: "",
-            password: "",
-            confirmPassword: ""
+            password: ""
+         
 
         },
         validate: (values) => {
@@ -35,14 +35,10 @@ function Login() {
             //no error error then only form procced to submit
 
             let errors = {}
-
-            if (!values.emailId) {
-                errors.emailId = "Required *"
-            }
-
-            if (!values.password) {
-                errors.password = "Required *"
-            }
+            if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.emailId)) {
+                errors.emailId = 'Invalid email address';
+              }
+        
 
             return errors;
         },
@@ -98,6 +94,8 @@ function Login() {
                                         </div>
                                         <form class="user" onSubmit={formik.handleSubmit}>
                                             <div class="form-group">
+                                                <label for="exampleInputEmail">Email Address <sup style={{color:"red"}}>*</sup></label>
+                                      
                                                 <input type="email"
                                                     class="form-control form-control-user"
                                                     id="exampleInputEmail"
@@ -105,14 +103,21 @@ function Login() {
                                                     placeholder="Enter Email Address..."
                                                     name="emailId"
                                                     onClick={formik.handleChange}
-                                                    onBlur={formik.handleBlur} />
+                                                    onBlur={formik.handleBlur}
+                                                     />
+                                                     
 
-                                                {(formik.getFieldMeta("emailId").touched && formik.errors.emailId)
+                                                {
+                                                ( formik.errors.emailId)
+                                             
+
                                                     ? <span style={{ color: "red" }}>{formik.errors.emailId}</span> : null}
 
 
                                             </div>
                                             <div class="form-group">
+                                            <label for="exampleInputEmail">Password <sup style={{color:"red"}}>*</sup></label>
+
                                                 <input type="password"
                                                     class="form-control form-control-user"
                                                     id="exampleInputPassword"
