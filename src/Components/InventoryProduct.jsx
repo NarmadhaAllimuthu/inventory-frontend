@@ -1,7 +1,12 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import InfoPopup from './InfoPopup';
+import DownloadProduct from './DownloadProduct';
+// import "font-awesome-icons/data/icons.json"
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 function InventoryProduct() {
 
@@ -37,8 +42,8 @@ function InventoryProduct() {
                         Authorization: localStorage.getItem("token")
                     }
                 });
-            setState(deleteProduct.data)
-            alert("Product deleted successfully  ❗❗❗!")
+            setState(deleteProduct.data);
+            alert("Product deleted successfully  ❗❗❗!");
 
         } catch (error) {
             if (error.response && error.response.status === 404) {
@@ -49,6 +54,15 @@ function InventoryProduct() {
             }
         }
     }
+
+  
+
+// const handleIconBtn=()=>{
+//     alert("clicked")
+// }
+
+
+
 
     return (
         <div className='container mt-5'>
@@ -73,11 +87,12 @@ function InventoryProduct() {
 
             </div>
 
-            <div className="row">
-                <div className="col-lg-12">
+            <div className="row ">
+                <div className="col-lg-7">
                     <h2 className="h4 heading mb-3">Product Details</h2>
 
                 </div>
+              <DownloadProduct productDetails={productDetails}></DownloadProduct>
             </div>
 
             <div className='row'>
@@ -86,6 +101,7 @@ function InventoryProduct() {
                         <thead>
                             <tr>
                                 <td>S.No</td>
+                              
                                 <th>Product Id</th>
                                 <th>Product Name</th>
                                 <th>Category</th>
@@ -95,6 +111,7 @@ function InventoryProduct() {
                                 {/* <th>Product Image</th>
 
                                 <th>Description</th> */}
+                                <th>Info</th> 
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -103,22 +120,51 @@ function InventoryProduct() {
                             {productDetails.map((item, index) => (
                                 <tr key={item._id}>
                                     <td>{index + 1} .</td>
+                                    
+                                     
                                     <td>{item.productId}</td>
                                     <td>{item.productName}</td>
                                     <td>{item.productMaterial}</td>
                                     <td>{item.productBasePrice}</td>
                                     <td>{item.productSellingPrice}</td>
                                     <td>{item.quantity}</td>
-                                    {/* <td></td>
-                                    <td></td> */}
+                                    <td>
+                                    <button className='btn btn-primary'
+                                        data-bs-toggle="modal"
+                                        data-bs-target={`#infoPopup${index}`}
+                                       >
+                                        <i class="bi bi-info-circle" />
+                                        </button>
+                                       
+                                      <InfoPopup></InfoPopup>
+                                    </td>
+                                   
+
                                     <td>
                                         <Link to={`/portal/viewProduct/${item._id}`}>
-                                            <button className='btn btn-info '> <i class="bi bi-eye"></i></button>
+                                       
+                                            <button className='btn btn-info '
+                                            data-bs-toggle="tooltip"
+                                           
+                                            data-placement='bottom'
+                                            title='view'> 
+                                                <i class="bi bi-eye"></i>
+                                                </button>
+                                             
                                         </Link>
+                                        
                                         <Link to={`/portal/editProduct/${item._id}`}>
-                                            <button className='btn mx-2  btn-warning'> <i class="bi bi-pencil-square"></i></button>
+                                            <button className='btn mx-2  btn-warning tooltip-test'
+                                            // data-bs-toggle="tooltip"
+                                           
+                                            data-placement='bottom'
+                                            title='edit'> <i class="bi bi-pencil-square"></i></button>
                                         </Link>
-                                        <button className='btn btn-danger' onClick={() => { handleitemDelete(item._id) }}><i class="bi bi-trash"></i></button>
+                                        <button className='btn btn-danger'data-bs-toggle="tooltip"
+                                           
+                                           data-placement='bottom'
+                                           title='delete'
+                                            onClick={() => { handleitemDelete(item._id) }}><i class="bi bi-trash"></i></button>
                                     </td>
                                 </tr>
                             ))}
@@ -142,6 +188,13 @@ function InventoryProduct() {
 
 
 export default InventoryProduct
+
+
+
+
+
+
+
 
 
 

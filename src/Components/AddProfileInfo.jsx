@@ -14,7 +14,9 @@ function AddProfileInfo() {
   // const history = useHistory();
 
 
-  const [userData, setUserData] = useState(null);
+  const [
+    
+    userData, setUserData] = useState(null);
   console.log(userData);
   const [edit, setEdit] = useState(false);
 

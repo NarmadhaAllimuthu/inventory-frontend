@@ -85,6 +85,7 @@ function SideBar() {
             <span>  Sales Order</span>
           </Link>
         </li>
+        
         <hr className="sidebar-divider" />
           </>
         );
