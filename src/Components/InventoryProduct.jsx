@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import InfoPopup from './InfoPopup';
 import DownloadProduct from './DownloadProduct';
+import CheckBoxSelect from './CheckBoxSelect';
 // import "font-awesome-icons/data/icons.json"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -12,6 +13,7 @@ function InventoryProduct() {
 
     const [productDetails, setProductDetails] = useState([]);
     const [state, setState] = useState();
+    const [selectedProducts, setSelectedProducts] = useState([]);
 
     const getProductDetails = async () => {
         try {
@@ -55,11 +57,18 @@ function InventoryProduct() {
         }
     }
 
-  
 
-// const handleIconBtn=()=>{
-//     alert("clicked")
-// }
+
+    const handleCheckboxChange = (productId) => {
+        setSelectedProducts(prevSelectedProducts => {
+            if (prevSelectedProducts.includes(productId)) {
+                return prevSelectedProducts.filter(id => id !== productId);
+            } else {
+                return [...prevSelectedProducts, productId];
+            }
+        })
+
+    }
 
 
 
@@ -92,7 +101,7 @@ function InventoryProduct() {
                     <h2 className="h4 heading mb-3">Product Details</h2>
 
                 </div>
-              <DownloadProduct productDetails={productDetails}></DownloadProduct>
+                <DownloadProduct productDetails={productDetails.filter((product) => selectedProducts.includes(product._id))}></DownloadProduct>
             </div>
 
             <div className='row'>
@@ -100,18 +109,20 @@ function InventoryProduct() {
                     <table className='table table-bordered table-hover'>
                         <thead>
                             <tr>
+                                <th>✅</th>
                                 <td>S.No</td>
-                              
+
                                 <th>Product Id</th>
                                 <th>Product Name</th>
                                 <th>Category</th>
                                 <th>Product Base Price</th>
+
                                 <th>Product Selling Price</th>
                                 <th>Quantity</th>
                                 {/* <th>Product Image</th>
 
                                 <th>Description</th> */}
-                                <th>Info</th> 
+                                <th>Info</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -119,9 +130,16 @@ function InventoryProduct() {
 
                             {productDetails.map((item, index) => (
                                 <tr key={item._id}>
+                                    <td>
+                                        <CheckBoxSelect
+                                            className='text-center'
+                                            productId={item._id}
+                                            isChecked={selectedProducts.includes(item._id)}
+                                            onCheckboxChange={handleCheckboxChange}
+                                        />
+                                    </td>
                                     <td>{index + 1} .</td>
-                                    
-                                     
+
                                     <td>{item.productId}</td>
                                     <td>{item.productName}</td>
                                     <td>{item.productMaterial}</td>
@@ -129,41 +147,41 @@ function InventoryProduct() {
                                     <td>{item.productSellingPrice}</td>
                                     <td>{item.quantity}</td>
                                     <td>
-                                    <button className='btn btn-primary'
-                                        data-bs-toggle="modal"
-                                        data-bs-target={`#infoPopup${index}`}
-                                       >
-                                        <i class="bi bi-info-circle" />
+                                        <button className='btn btn-primary'
+                                            data-bs-toggle="modal"
+                                            data-bs-target={`#infoPopup${index}`}
+                                        >
+                                            <i class="bi bi-info-circle" />
                                         </button>
-                                       
-                                      <InfoPopup></InfoPopup>
+
+                                        <InfoPopup></InfoPopup>
                                     </td>
-                                   
+
 
                                     <td>
                                         <Link to={`/portal/viewProduct/${item._id}`}>
-                                       
+
                                             <button className='btn btn-info '
-                                            data-bs-toggle="tooltip"
-                                           
-                                            data-placement='bottom'
-                                            title='view'> 
+                                                data-bs-toggle="tooltip"
+
+                                                data-placement='bottom'
+                                                title='view'>
                                                 <i class="bi bi-eye"></i>
-                                                </button>
-                                             
+                                            </button>
+
                                         </Link>
-                                        
+
                                         <Link to={`/portal/editProduct/${item._id}`}>
                                             <button className='btn mx-2  btn-warning tooltip-test'
-                                            // data-bs-toggle="tooltip"
-                                           
-                                            data-placement='bottom'
-                                            title='edit'> <i class="bi bi-pencil-square"></i></button>
+                                                // data-bs-toggle="tooltip"
+
+                                                data-placement='bottom'
+                                                title='edit'> <i class="bi bi-pencil-square"></i></button>
                                         </Link>
-                                        <button className='btn btn-danger'data-bs-toggle="tooltip"
-                                           
-                                           data-placement='bottom'
-                                           title='delete'
+                                        <button className='btn btn-danger' data-bs-toggle="tooltip"
+
+                                            data-placement='bottom'
+                                            title='delete'
                                             onClick={() => { handleitemDelete(item._id) }}><i class="bi bi-trash"></i></button>
                                     </td>
                                 </tr>
